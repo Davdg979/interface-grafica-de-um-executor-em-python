@@ -1,14 +1,19 @@
 from tkinter import *
 from tkinter import ttk
 
+def reset_status():
+    label1.config(text='')
+
 def Run():
-    pass
+    label1.config(text='Executando...')
+    app.after(5000, reset_status) 
 
 def Clear():
     textbox.delete('1.0', 'end')
 
 def Inject():
-    pass
+    label1.config(text='Injetado...')
+    app.after(5000, reset_status)
 
 app = Tk()
 app.title('Executor Sus')
@@ -16,7 +21,11 @@ app.geometry('700x400')
 app.resizable(width=False, height=False)
 app.configure(background="Black")
 
-label1 = ttk.Label(app, text='Executor Sus', foreground='White', background='Black', font=('Arial', 20)).place(x=15, y=5)
+title = ttk.Label(app, text='Executor', foreground='White', background='Black', font=('Arial', 20))
+title.place(x=15, y=5)
+
+label1 = ttk.Label(app, text='', foreground='White', background='Black', font=('Arial', 20))
+label1.place(x=530, y=5)
 
 textbox = Text(bg='Black', fg='White', font=('Arial'))
 textbox.place(x=15, y=55, width=675, height=250)
