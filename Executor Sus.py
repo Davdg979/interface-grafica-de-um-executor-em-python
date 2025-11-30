@@ -1,6 +1,32 @@
 from tkinter import *
 from tkinter import ttk
 
+current_language = "en"
+
+def pt_Br():
+    global current_language
+    current_language = "pt"
+    button1.configure(text="Executar")
+    button2.configure(text="Limpar")
+    button3.configure(text="Injetar")
+    style_Black.configure(text="Estilo Preto")
+    style_White.configure(text="Estilo Branco")
+    pt_BR.configure(text="Português")
+    en.configure(text="Inglês")
+    label1.config(text='') 
+
+def En():
+    global current_language
+    current_language = "en"
+    button1.configure(text="Run")
+    button2.configure(text="Clear")
+    button3.configure(text="Inject")
+    style_Black.configure(text="Style Black")
+    style_White.configure(text="Style White")
+    pt_BR.configure(text="Portuguese")
+    en.configure(text="English")
+    label1.config(text='')
+
 def Style_white():
     app.configure(background="White")
     title.configure(foreground="Black", background="White")
@@ -17,14 +43,21 @@ def reset_status():
     label1.config(text='')
 
 def Run():
-    label1.config(text='Executando...')
+    if current_language == "pt":
+        label1.config(text='Executado...')
+    else:
+        label1.config(text='Executed...')
     app.after(1000, reset_status) 
 
 def Clear():
     textbox.delete('1.0', 'end')
 
 def Inject():
-    label1.config(text='Injetado...')
+
+    if current_language == "pt":
+        label1.config(text='Injetado...')
+    else:
+        label1.config(text='Injected...')
     app.after(1000, reset_status)
 
 app = Tk()
@@ -56,5 +89,11 @@ style_White.place(x=100,y=350)
 
 style_Black = ttk.Button(app, text="Style Black", command=Style_black)
 style_Black.place(x=15,y=350)
+
+pt_BR = ttk.Button(app, text="Portuguese", command=pt_Br)
+pt_BR.place(x=15,y=320)
+
+en = ttk.Button(app, text="English", command=En)
+en.place(x=100,y=320)
 
 app.mainloop()
