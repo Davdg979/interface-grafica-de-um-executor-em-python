@@ -104,7 +104,7 @@ def Inject():
     app.after(5000, reset_status)
 
 app = Tk()
-app.title('Executor')
+app.title('Executor Sus')
 app.geometry('700x400')
 app.resizable(width=False, height=False)
 app.configure(background="Black")
