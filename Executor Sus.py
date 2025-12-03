@@ -1,6 +1,49 @@
 from tkinter import *
 from tkinter import ttk
 
+#------------------------------Scripts-----------------------------------#
+
+def Janela():
+    janela = Toplevel(app)
+    janela.title("Scripts")
+    janela.geometry("280x300")
+    janela.resizable(width=False, height=False)
+    janela.configure(background="Black")
+
+    bt1 = ttk.Button(janela, text="Dex Explorer", command=Dex)
+    bt1.place(x=10, y=10)
+
+    bt2 = ttk.Button(janela, text="Infinite Yield", command=Yield)
+    bt2.place(x=100, y=10)
+
+    bt3 = ttk.Button(janela, text="Fly V3", command=Fly_V3)
+    bt3.place(x=190, y=10)
+
+    bt4 = ttk.Button(janela, text="Btools", command=Btools)
+    bt4.place(x=10, y=50)
+
+    bt5 = ttk.Button(janela, text="Invisible", command=Invesible)
+    bt5.place(x=100, y=50)
+
+def Dex():
+    textbox.insert('1.0', 'loadstring(game:HttpGet("https://obj.wearedevs.net/2/scripts/Dex%20Explorer.lua"))()')
+
+def Yield():
+    textbox.insert('1.0', 'loadstring(game:HttpGet("https://obj.wearedevs.net/2/scripts/Infinite%20Yield.lua"))()')
+
+def Fly_V3():
+    textbox.insert('1.0', 'loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()')
+
+def Btools():
+    textbox.insert('1.0', 'loadstring(game:HttpGet("https://obj.wearedevs.net/2/scripts/BTools.lua"))()')
+
+def Invesible():
+    textbox.insert('1.0', 'loadstring(game:HttpGet("https://obj.wearedevs.net/2/scripts/Invisible%20Character.lua"))()')
+
+
+#------------------------------Executor-----------------------------------#
+
+
 current_language = "en"
 
 def pt_Br():
@@ -47,7 +90,7 @@ def Run():
         label1.config(text='Executado...')
     else:
         label1.config(text='Executed...')
-    app.after(1000, reset_status) 
+    app.after(5000, reset_status) 
 
 def Clear():
     textbox.delete('1.0', 'end')
@@ -58,10 +101,10 @@ def Inject():
         label1.config(text='Injetado...')
     else:
         label1.config(text='Injected...')
-    app.after(1000, reset_status)
+    app.after(5000, reset_status)
 
 app = Tk()
-app.title('Executor Sus')
+app.title('Executor')
 app.geometry('700x400')
 app.resizable(width=False, height=False)
 app.configure(background="Black")
@@ -74,6 +117,7 @@ label1.place(x=530, y=5)
 
 textbox = Text(bg='Black', fg='White', font=('Arial'))
 textbox.place(x=15, y=55, width=675, height=250)
+textbox.insert('1.0', 'print("Hello World!")')
 
 button1 = ttk.Button(app, text='Run', command=Run)
 button1.place(x=400, y=350)
@@ -95,5 +139,9 @@ pt_BR.place(x=15,y=320)
 
 en = ttk.Button(app, text="English", command=En)
 en.place(x=100,y=320)
+
+bt_script = ttk.Button(app, text="Scripts", command=Janela)
+bt_script.place(x=185,y=350)
+
 
 app.mainloop()
