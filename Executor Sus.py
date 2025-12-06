@@ -1,6 +1,34 @@
 from tkinter import *
 from tkinter import ttk
 
+#------------------------------Opção-----------------------------------#
+
+def Opcao():
+    opcao = Toplevel()
+    opcao.title("Opção")
+    opcao.geometry("250x200")
+    opcao.resizable(width=False, height=False)
+    opcao.configure(background="Black")
+
+    style_White = ttk.Button(opcao, text="Style White", command=Style_white)
+    style_White.place(x=10,y=10)
+
+    style_Black = ttk.Button(opcao, text="Style Black", command=Style_black)
+    style_Black.place(x=100,y=10)
+
+def Style_white():
+    app.configure(background="White")
+    title.configure(foreground="Black", background="White")
+    label1.configure(foreground="Black", background="White")
+    textbox.configure(foreground="Black", background="White")
+    
+
+def Style_black():
+    app.configure(background="Black")
+    title.configure(foreground="White", background="Black")
+    label1.configure(foreground="White", background="Black")
+    textbox.configure(foreground="White", background="Black")
+
 #------------------------------Scripts-----------------------------------#
 
 def Janela():
@@ -70,18 +98,6 @@ def En():
     en.configure(text="English")
     label1.config(text='')
 
-def Style_white():
-    app.configure(background="White")
-    title.configure(foreground="Black", background="White")
-    label1.configure(foreground="Black", background="White")
-    textbox.configure(foreground="Black", background="White")
-
-def Style_black():
-    app.configure(background="Black")
-    title.configure(foreground="White", background="Black")
-    label1.configure(foreground="White", background="Black")
-    textbox.configure(foreground="White", background="Black")
-
 def reset_status():
     label1.config(text='')
 
@@ -143,5 +159,7 @@ en.place(x=100,y=320)
 bt_script = ttk.Button(app, text="Scripts", command=Janela)
 bt_script.place(x=185,y=350)
 
+bt_op = ttk.Button(app, text="Opção", command=Opcao)
+bt_op.place(x=185,y=320)
 
 app.mainloop()
