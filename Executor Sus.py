@@ -84,6 +84,7 @@ def pt_Br():
     style_White.configure(text="Estilo Branco")
     pt_BR.configure(text="Português")
     en.configure(text="Inglês")
+    textbox.insert('1.0',  'print("Feito por Davi Gabriel")')
     label1.config(text='') 
 
 def En():
@@ -96,6 +97,7 @@ def En():
     style_White.configure(text="Style White")
     pt_BR.configure(text="Portuguese")
     en.configure(text="English")
+    textbox.insert('1.0', 'print("Made by Davi Gabriel")')
     label1.config(text='')
 
 def reset_status():
@@ -133,7 +135,7 @@ label1.place(x=530, y=5)
 
 textbox = Text(bg='Black', fg='White', font=('Arial'))
 textbox.place(x=15, y=55, width=675, height=250)
-textbox.insert('1.0', 'print("Hello World!")')
+textbox.insert('1.0', 'print("Made by Davi Gabriel")')
 
 button1 = ttk.Button(app, text='Run', command=Run)
 button1.place(x=400, y=350)
@@ -145,10 +147,10 @@ button3 = ttk.Button(app, text='Inject', command=Inject)
 button3.place(x=600, y=350)
 
 style_White = ttk.Button(app, text="Style White", command=Style_white)
-style_White.place(x=100,y=350)
+style_White.place(x=0,y=999)
 
 style_Black = ttk.Button(app, text="Style Black", command=Style_black)
-style_Black.place(x=15,y=350)
+style_Black.place(x=0,y=999)
 
 pt_BR = ttk.Button(app, text="Portuguese", command=pt_Br)
 pt_BR.place(x=15,y=320)
@@ -157,9 +159,9 @@ en = ttk.Button(app, text="English", command=En)
 en.place(x=100,y=320)
 
 bt_script = ttk.Button(app, text="Scripts", command=Janela)
-bt_script.place(x=185,y=350)
+bt_script.place(x=100,y=350)
 
 bt_op = ttk.Button(app, text="Opção", command=Opcao)
-bt_op.place(x=185,y=320)
+bt_op.place(x=15,y=350)
 
 app.mainloop()
