@@ -1,2 +1,2 @@
-pt-BR: Ainda não tem uma Cloudy Api mais ser você tem coloque ai sim que vai virar um executor.
+pt-BR: Ainda não tem uma Cloudy Api mais ser você tem coloque, ai sim que vai virar um executor.
 English: It doesn't have a Cloudy API yet, but if you do, add it and it will become an executor.
