@@ -1,8 +1,6 @@
 from tkinter import *
 from tkinter import ttk
 
-#------------------------------Opção-----------------------------------#
-
 def Opcao():
     opcao = Toplevel()
     opcao.title("Opção")
@@ -27,8 +25,6 @@ def Style_black():
     title.configure(foreground="White", background="Black")
     label1.configure(foreground="White", background="Black")
     textbox.configure(foreground="White", background="Black")
-
-#------------------------------Scripts-----------------------------------#
 
 def Janela():
     janela = Toplevel(app)
@@ -72,8 +68,6 @@ def Invesible():
     textbox.delete('1.0', 'end')
     textbox.insert('1.0', 'loadstring(game:HttpGet("https://obj.wearedevs.net/2/scripts/Invisible%20Character.lua"))()')
 
-#------------------------------Executor-----------------------------------#
-
 current_language = "en"
 
 def pt_Br():
@@ -82,6 +76,8 @@ def pt_Br():
     button1.configure(text="Executar")
     button2.configure(text="Limpar")
     button3.configure(text="Injetar")
+    textbox.delete('1.0', 'end')
+    textbox.insert('1.0', 'print("Olá, Mundo")')
     style_Black.configure(text="Estilo Preto")
     style_White.configure(text="Estilo Branco")
     pt_BR.configure(text="Português")
@@ -94,6 +90,8 @@ def En():
     button1.configure(text="Run")
     button2.configure(text="Clear")
     button3.configure(text="Inject")
+    textbox.delete('1.0', 'end')
+    textbox.insert('1.0', 'print("Hello, World!")')
     style_Black.configure(text="Style Black")
     style_White.configure(text="Style White")
     pt_BR.configure(text="Portuguese")
@@ -121,8 +119,6 @@ def Inject():
         label1.config(text='Injected...')
     app.after(5000, reset_status)
 
-#------------------------------Configurações do Executor-----------------------------------#
-
 app = Tk()
 app.title('Executor Sus')
 app.geometry('700x400')
@@ -148,12 +144,11 @@ button2.place(x=500, y=350)
 button3 = ttk.Button(app, text='Inject', command=Inject)
 button3.place(x=600, y=350)
 
-#------------------------------...-----------------------------------#
 style_White = ttk.Button(app, text="Style White", command=Style_white)
 style_White.place(x=0,y=999)
+
 style_Black = ttk.Button(app, text="Style Black", command=Style_black)
 style_Black.place(x=0,y=999)
-#------------------------------...-----------------------------------#
 
 pt_BR = ttk.Button(app, text="Portuguese", command=pt_Br)
 pt_BR.place(x=15,y=320)
